@@ -1,0 +1,26 @@
+application: your-app-id
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+libraries:
+- name: jinja2
+  version: latest
+
+handlers:
+- url: /scripts
+  static_dir: scripts
+#  expiration: 30d
+  
+- url: /css
+  static_dir: css
+#  expiration: 30d
+
+  
+- url: /imgs
+  static_dir: imgs
+#  expiration: 30d
+
+- url: /.*
+  script: main.application
