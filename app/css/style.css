@@ -1,6 +1,8 @@
 body{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 #map-canvas {
   height: 75%;
@@ -48,9 +50,9 @@ body{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
-.readmore{
+.readmorebtn{
   margin-top: 30px;
-  padding: 15px 10px 15px 10px;
+  padding: 20px 10px 15px 10px;
   border: 3px solid #384182;
   /*background-color: #3B5C82;*/
   text-align: center;
@@ -104,3 +106,29 @@ input{
   font-weight: 300;
 
 }
+@media only screen { } /* Define mobile styles */
+
+@media only screen and (max-width: 40em) {
+  #map-canvas{
+    height: 50%;
+  }
+  .about{
+    height: 50%;
+  }
+
+   } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+
+@media only screen and (min-width: 40.063em) { } /* min-width 641px, medium screens */
+
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { } /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+
+
+@media only screen and (min-width: 64.063em) { } /* min-width 1025px, large screens */
+
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { } /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+
+@media only screen and (min-width: 90.063em) { } /* min-width 1441px, xlarge screens */
+
+@media only screen and (min-width: 90.063em) and (max-width: 120em) { } /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+
+@media only screen and (min-width: 120.063em) { } /* min-width 1921px, xxlarge screens */
