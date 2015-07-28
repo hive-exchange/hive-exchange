@@ -9,6 +9,9 @@
     <script src="js/main.js"></script>
     <link href="css/style.css" rel="stylesheet">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="js/googSignIn.js" async defer></script>
+    <meta name="google-signin-client_id" content="179222842655-bc2ftvbpfnrodt1aoo8l5icmtd63cebh.apps.googleusercontent.com">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
 
 
@@ -61,13 +64,13 @@
 
   <section class="about">
   <div class="row">
-    <div class="large-4 small-6 columns text-left">
+    <div class="small-4 columns text-left">
   <img id="logo-btm" src="img/hiveLogo12.png">
 </div>
-<div class="large-4 small-6 columns">
+<div class="small-4 columns">
   <h3 class="opensans mission">hive lets you find people in your area to swap services, resources, and skills with.</h3>
 </div>
-<div class="large-4 small-12 columns readmorebtn"><a href="#" data-reveal-id="readmoreButton" id="readmorebtn">Read More</a></div>
+<div class="small-4 columns readmore"><a href="#">Read More</a></div>
 </div>
 
 </section>
@@ -251,12 +254,12 @@ begin log in modal-->
       </div>
   <div class="row">
     <div class="small-12 columns">
-      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+      <fb:login-button scope="public_profile,email" onlogin="FBcheckLoginState();"></fb:login-button>
       </div>
     </div>
 <div class="row">
   <div class="small-12 columns">
-    <a href="#" class="button alert large">Log in with Google</a>
+    <div class="g-signin2" data-onsuccess="GOOGonSignIn"></div>
 </div>
 </div>
 <form action="/login" method="post" target="_blank">
@@ -284,16 +287,6 @@ begin log in modal-->
 </div>
 <!--END LOGIN MODAL-->
 
-<!--begin read more section-->
-<div id="readmoreButton" class="reveal-modal" data-reveal aria-labelledby="readmoreButton" aria-hidden="true" role="dialog">
-  <section class="">
-    <div class="row">
-      <div class="small-12 columns text-center">
-        <h1>read more?</h1><a class="close-reveal-modal" aria-label="Close">&#215;</a>
-      </div>
-    </div>
-  </section>
-</div>
 
 
     <script src="js/vendor/jquery.js"></script>
