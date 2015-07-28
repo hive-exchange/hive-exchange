@@ -39,7 +39,18 @@
    </script>
   </head>
 
-  <body>
+  <body>  
+  <script src="js/facebook.js"></script>      
+      
+<!-- SITE'S FACEBOOK LIKE/SHARE ICON TODO
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+-->
+      
   <div id="map-canvas"></div>
   <div id="logoDiv"></div>
   <div><a href="#" data-reveal-id="signupbtn" id="signUp">Sign Up</a></div>
@@ -240,9 +251,9 @@ begin log in modal-->
       </div>
   <div class="row">
     <div class="small-12 columns">
-      <a href="#" class="button large">Log in with Facebook</a>
-</div>
-</div>
+      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+      </div>
+    </div>
 <div class="row">
   <div class="small-12 columns">
     <a href="#" class="button alert large">Log in with Google</a>
