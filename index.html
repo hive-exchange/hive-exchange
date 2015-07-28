@@ -1,0 +1,284 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HIVE</title>
+    <link rel="stylesheet" href="css/foundation.min.css" />
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/main.js"></script>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
+
+
+<!-- BEGIN GOOGLE MAP API-->
+
+   <script>
+
+   function initialize() {
+
+     var mapOptions = {
+       zoom: 14,
+       center: new google.maps.LatLng(41.88, -87.66),
+       disableDefaultUI: false
+     }
+      var styles = [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#4a7847"}]},{"featureType":"administrative","elementType":"labels.text.stroke","stylers":[{"color":"#2c2828"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#294726"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#364431"},{"lightness":18}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"},{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.text.fill","stylers":[{"color":"#6c6a6a"}]},{"featureType":"road.arterial","elementType":"labels.text.stroke","stylers":[{"color":"#1f2624"}]},{"featureType":"road.local","elementType":"all","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#2d381f"},{"lightness":16}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#0f252e"},{"lightness":17}]}];
+       var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+       var logoDiv = document.getElementById('logoDiv');
+       var signUpDiv = document.getElementById('signUp');
+       var logInDiv = document.getElementById('logIn');
+       map.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(logoDiv);
+       map.controls[google.maps.ControlPosition.TOP_LEFT].push(signUpDiv);
+       map.controls[google.maps.ControlPosition.TOP_RIGHT].push(logInDiv);
+       map.setOptions({styles: styles});
+
+
+   }
+     google.maps.event.addDomListener(window, 'load', initialize);
+   </script>
+  </head>
+
+  <body>
+  <div id="map-canvas"></div>
+  <div id="logoDiv"></div>
+  <div><a href="#" data-reveal-id="signupbtn" id="signUp">Sign Up</a></div>
+  <div><a href="#" data-reveal-id="loginbtn" id="logIn">Log In</a></div>
+
+  <!--Below map canvas-->
+
+
+  <section class="about">
+  <div class="row">
+    <div class="small-4 columns text-left">
+  <img id="logo-btm" src="img/hiveLogo12.png">
+</div>
+<div class="small-4 columns">
+  <h3 class="opensans mission">Hive lets you find people in your area to swap services, resources, and skills with.</h3>
+</div>
+<div class="small-4 columns readmore"><a href="#">Read More</a></div>
+</div>
+
+</section>
+
+<!--begin sign up modal-->
+
+<div id="signupbtn" class="reveal-modal" data-reveal aria-labelledby="signupbtn" aria-hidden="true" role="dialog">
+  <div class="row">
+  <div class="small-12 columns text-center">
+    <h1 class="opensans">Welcome to hive, you're almost in.</h1><a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+</div>
+<div class="row">
+  <div class="small-6 columns text-center"><button class="large">Sign up using Facebook</button>
+  </div>
+  <div class="small-6 columns text-center"><button class="large alert">Sign up using Google</button>
+  </div>
+</div>
+<div class="row">
+  <div class="small-12 columns text-center">
+    <h3>Or, create account using an email address:<h3>
+    </div>
+  </div>
+<form action="/signup" method="post" target="_blank">
+    <fieldset><legend>Personal Info:</legend>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+
+          <label for="name-label" class="right inline">First and last name</label>
+        </div>
+        <div class="small-6 columns">
+          <input type="text" id="name-label" name="name" placeholder="First Name and last name">
+        </div>
+        <div class="small-3 columns">
+          <p>Only your first name will be visible to other users.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="email-label" class="right inline">Email</label>
+        </div>
+        <div class="small-6 columns">
+          <input type="email" id="email-label" name="email" placeholder="Email">
+        </div>
+        <div class="small-3 columns">
+          <p></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="phone-label" class="right inline">Phone Number</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="tel" id="phone-label" name="phone" placeholder="Phone Number">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="password-label" class="right inline">Password</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="password" id="password-label" name="password" placeholder="Password">
+        </div>
+      </div>
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="password-label2" class="right inline">Please reenter your password</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="password" id="password-label2" name="password-check" placeholder="Please reenter your password">
+        </div>
+      </div>
+    </div>
+  </div>
+</fieldset>
+
+  <div class="row">
+    <div class="small-6 small-offset-3 columns text-center">
+      <h4 class="opensans">Below, please enter the skills, services, or whatever else you want to trade with other people</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="skill-label-1" class="right inline">First skill offered</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="text" id="skill-label-1" name="skill1" placeholder="First skill offered">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="skill-label-2" class="right inline">Second skill offered</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="text" id="skill-label-2" name="skill2" placeholder="Second skill offered">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="skill-label-3" class="right inline">Third skill offered</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="text" id="skill-label-3" name="skill3" placeholder="Third skill offered">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="skill-label-4" class="right inline">Fourth skill offered</label>
+        </div>
+        <div class="small-6 columns end">
+          <input type="text" id="skill-label-4" name="skill4" placeholder="Fourth skill offered">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-3 columns">
+          <label for="pic" class="right inline">Profile Pic</label>
+        </div>
+        <div class="small-6 columns">
+          <input type="file" id="pic" name="pic" accept="/image" placeholder="Profile Picture">
+        </div>
+        <div class="small-3 columns">
+          <p>Use a picture that clearly shows your face, so others can find you during an exchange.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="row">
+        <div class="small-12 columns text-center">
+          <button type="submit" id="submit">Create Account</button>
+          <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+</div>
+
+<!--end sign up modal
+
+begin log in modal-->
+<div id="loginbtn" class="reveal-modal text-center" data-reveal aria-labelledby="loginbtn" aria-hidden="true" role="dialog">
+    <div class="row">
+        <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+      </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <a href="#" class="button large">Log in with Facebook</a>
+</div>
+</div>
+<div class="row">
+  <div class="small-12 columns">
+    <a href="#" class="button alert large">Log in with Google</a>
+</div>
+</div>
+<form action="/login" method="post" target="_blank">
+  <fieldset><legend>Or, Log in with email</legend>
+<div class="row">
+  <div class="small-3 columns">
+    <label for="email-login" class="right inline">Email address</label>
+  </div>
+  <div class="small-6 columns end">
+    <input type="email" id="email-login" name="email" placeholder="Email address">
+  </div>
+</div>
+<div class="row">
+  <div class="small-3 columns">
+    <label for="password-login" class="right inline">Password</label>
+  </div>
+  <div class="small-6 columns end">
+    <input type="password" id="password-login" name="password" placeholder="Password">
+  </div>
+</div>
+<button type="submit" id="submit">Log In</button>
+</fieldset>
+</form>
+
+</div>
+<!--END LOGIN MODAL-->
+
+
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+</html>
