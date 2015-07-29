@@ -7,7 +7,7 @@ body{
   width: 100%;
 }
 #logoDiv {
-  /*background-image: url("../img/ship1small.png");*/
+background-image: url("../img/ship1small.png");
   background-repeat: no-repeat;
   width: 800px;
   height: 600px;
