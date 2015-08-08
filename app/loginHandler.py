@@ -35,6 +35,22 @@ class GLoginHandler(BaseHandler):
             self.response.write("Bad login")
         else:
           self.response.write('Bad login')
+          
+class FLoginHandler(BaseHandler):
+  def post(self):
+    data = json.loads(self.request.get('data'))
+    
+    if alreadyExists("FB:%s"%(data['id'])):
+      self.response.write("Already Exists")
+    else:
+      user = User(username="FB:%s"%(data['id']))
+      fname, lname = data['name'].split(" ")
+      user.firstName = fname
+      user.lastName = lname
+      user.put()
+      self.response.write(data['name'])
+    
+    
 
           
 #helpers          

@@ -43,20 +43,21 @@ function FBstatusChangeCallback(response) {
 
 function fb_login(){
     FB.login(function(response) {
-
-      console.log(response)
+      var userID = response.authResponse.userID
+      console.log(userID)
       
-      FB.api('/me', function(response) {
-        console.log(response);
+      FB.api('/'+userID, function(response) {
+        name = response.name;
+        console.log(name)
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/flogin');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onload = function() {
+          console.log('Signed in as:' + xhr.responseText);
+        };
+        xhr.send('data=' + JSON.stringify(response));
       });
         
-//        var xhr = new XMLHttpRequest();
-//        xhr.open('POST', '/flogin');
-//        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-//        xhr.onload = function() {
-//          console.log('Signed in as: ' + xhr.responseText);
-//        };
-//        xhr.send('idtoken=' + token);
-    
     });
 }

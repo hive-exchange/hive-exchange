@@ -24,6 +24,16 @@ function GOOGonFailure(error) {
 
 
 function GOOGrenderButton() {
+  gapi.signin2.render('goog-signup', {
+    'scope': 'https://www.googleapis.com/auth/plus.login',
+    'width': 300,
+    'height': 60,
+    'longtitle': true,
+    'theme': 'dark',
+    'onsuccess': GOOGonSignIn,
+    'onfailure': GOOGonFailure
+  });
+  
   gapi.signin2.render('goog-signin', {
     'scope': 'https://www.googleapis.com/auth/plus.login',
     'width': 300,

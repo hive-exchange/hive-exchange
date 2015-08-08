@@ -11,7 +11,10 @@
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,100,500' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-
+  <script src="js/facebook.js"></script>
+  <script src="js/google_login.js"></script>
+  <script src="https://apis.google.com/js/platform.js?onload=GOOGrenderButton" async defer></script>
+  <meta name="google-signin-client_id" content="179222842655-bc2ftvbpfnrodt1aoo8l5icmtd63cebh.apps.googleusercontent.com">
 
 <!-- BEGIN GOOGLE MAP API-->
 
@@ -131,9 +134,11 @@ var infowindow = new google.maps.InfoWindow({
   </div>
 </div>
 <div class="row">
-  <div class="small-6 columns text-center"><button class="large">Sign up using Facebook</button>
+  <div class="small-6 columns text-center">
+    <a href="#" onclick="fb_login();"><button class="large">Sign up using Facebook</button></a>
   </div>
-  <div class="small-6 columns text-center"><button class="large alert">Sign up using Google</button>
+  <div class="small-6 columns text-center">
+    <div id="goog-signin"></div>
   </div>
 </div>
 <div class="row">
@@ -300,14 +305,12 @@ begin log in modal-->
         <a class="close-reveal-modal" aria-label="Close">&#215;</a>
       </div>
   <div class="row">
-    <div class="small-12 columns">
-      <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-      </div>
+    <div class="small-6 columns text-center">
+      <a href="#" onclick="fb_login();"><button class="large">Sign up using Facebook</button></a>
     </div>
-<div class="row">
-  <div class="small-12 columns">
-    <a href="#" class="button alert large">Log in with Google</a>
-</div>
+  <div class="small-6 columns text-center">
+      <div id="goog-signup"></div>
+  </div>
 </div>
 <form action="/login" method="post" target="_blank">
   <fieldset><legend>Or, Log in with email</legend>
