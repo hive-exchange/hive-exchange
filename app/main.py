@@ -20,8 +20,7 @@ session_config['webapp2_extras.sessions'] = {
 }
 
 application = webapp2.WSGIApplication([
-    ('/', routes.HomePageHandler)
-#        ,
+    ('/', routes.HomePageHandler),
 #    ('/login', routes.LoginHandler),
-#    ('/signup', routes.SignupHandler)
+    ('/glogin', routes.GLoginHandler)
 ], debug=True, config=session_config)

@@ -1,6 +1,19 @@
+/*variables */
+$font-stack: font-family: 'Roboto', sans-serif;
+$primary-yellow: #FFFF66;
+$primary-color: #3B5C82;
+$second-color: #384182;
+$background-color: #333333;
+
 body{
-  font-family: 'Roboto', sans-serif;
+  font: $font-stack;
   font-weight: 300;
+  background-color: $gray-main;
+}
+.about h3{
+  color: #ecf0f1;
+  font-weight: 100;
+  margin-top: -15px;
 }
 #map-canvas {
   height: 75%;
@@ -9,16 +22,17 @@ body{
 #logoDiv {
   /*background-image: url("../img/ship1small.png");*/
   background-repeat: no-repeat;
-  width: 800px;
-  height: 600px;
+  width: 400px;
+  height: 175px;
   text-align: center;
   position: absolute;
 
 }
 
 #signUp{
-  border: 3px solid #ecf0f1;
-  /*background-color: #3B5C82;*/
+  border: 3px solid #bdc3c7;
+  border-bottom: 5px solid #bdc3c7;
+  /*background-color: #ecf0f1;*/
   text-align: center;
   font-size: 4em;
   color: #ecf0f1;
@@ -34,7 +48,8 @@ body{
 
 }
 #logIn{
-  border: 3px solid #bdc3c7;
+  border: 3px solid #ecf0f1;
+  border-bottom: 5px solid #ecf0f1;
   font-size: 4em;
   text-align: center;
   color: #bdc3c7;
@@ -43,26 +58,42 @@ body{
   padding: 10px 10px 10px 10px;
   width: 200px;
   height: 100px;
-  /*background-color: #384182;*/
+  /*background-color: #bdc3c7;*/
   border-radius: 5px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
 .readmorebtn{
-  margin-top: 30px;
+  color: #ecf0f1;
+  margin-top: 50px;
+  margin-left: 100px;
   padding: 20px 10px 15px 10px;
-  border: 3px solid #384182;
-  /*background-color: #3B5C82;*/
+  border-bottom: 5px solid #384182;
+  background-color: #3B5C82;
   text-align: center;
   font-size: 2em;
-  color: #384182;
   width: 300px;
   height: 100px;
   border-radius: 5px;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-
+}
+#readmorebtn{
+  color: #ecf0f1;
+}
+article p, h1, h2, h3{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+}
+article h1{
+  font-size: 3em;
+}
+article h2{
+  font-size: 2em;
+}
+article p{
+  font-size: 1.5em;
 }
 .opensans{
 font-family: 'Roboto', sans-serif;
@@ -74,7 +105,9 @@ font-family: 'Roboto', sans-serif;
 }
 
 .about {
-  background-color: #FFFF66;
+  background-color: #333;
+  border-top: 10px solid #333;
+  background-image: url(../img/bg.png);
   height: 25%;
 }
 
@@ -82,7 +115,15 @@ font-family: 'Roboto', sans-serif;
   padding-top: 20px;
 }
 
-
+.logohex{
+  background: url(../img/logohexsmall.png);
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+#logo-btm{
+  margin-left: -75px;
+}
 .sign-up-page{
   background-color: #FFFF66;
   color: #384182;
@@ -103,6 +144,11 @@ input{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 
+}
+#infowindowContent{
+  height: 300px;
+  width: 300px;
+  background-color: white;
 }
 @media only screen { } /* Define mobile styles */
 

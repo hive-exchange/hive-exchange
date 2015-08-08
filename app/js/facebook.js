@@ -40,3 +40,23 @@ function FBstatusChangeCallback(response) {
       alert('you are' + response.name + '!');
     });
   }
+
+function fb_login(){
+    FB.login(function(response) {
+
+      console.log(response)
+      
+      FB.api('/me', function(response) {
+        console.log(response);
+      });
+        
+//        var xhr = new XMLHttpRequest();
+//        xhr.open('POST', '/flogin');
+//        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+//        xhr.onload = function() {
+//          console.log('Signed in as: ' + xhr.responseText);
+//        };
+//        xhr.send('idtoken=' + token);
+    
+    });
+}

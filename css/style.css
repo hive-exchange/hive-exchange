@@ -2,6 +2,11 @@ body{
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
 }
+
+a{
+  cursor: pointer;
+}
+
 #map-canvas {
   height: 75%;
   width: 100%;
