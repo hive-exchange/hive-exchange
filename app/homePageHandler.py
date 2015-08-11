@@ -11,5 +11,9 @@ jinja = jinja2.Environment(autoescape=True,
 
 class HomePageHandler(BaseHandler):
     def get(self):
-        home = jinja.get_template('html/index.html')
+        if self.request.get("admin") == 'yes':
+          home = jinja.get_template('html/index.html')
+        else:
+          home = jinja.get_template('html/index-test.html')
+          
         self.response.write(home.render())
